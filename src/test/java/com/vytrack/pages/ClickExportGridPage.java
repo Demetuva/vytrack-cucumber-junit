@@ -22,5 +22,11 @@ public class ClickExportGridPage {
     @FindBy(xpath = "//div[@class='btn-group']")
     public WebElement dropDownBtn;
 
+    @FindBy(xpath = "//div[@class='pull-right grid-toolbar-tools']//a[@title='Refresh']")
+    public WebElement refreshBtn;
+
+    @FindBy(xpath = "//div[@class='pull-right grid-toolbar-tools']//a[@title='Reset']")
+    public WebElement resetBtn;
+
 }
 

@@ -1,6 +1,8 @@
 package com.vytrack.utilities;
 
+import com.vytrack.pages.ClickExportGridPage;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Set;
 
 public class BrowserUtils {
+    ClickExportGridPage clickExportGridPage = new ClickExportGridPage();
 
 //    TC : Create utility method
 //   1. Create a new class called BrowserUtils
@@ -66,5 +69,17 @@ public class BrowserUtils {
         action.moveToElement(element).perform();
 
     }
+    public boolean seeRefreshBtn() {
+        if (clickExportGridPage.refreshBtn.isDisplayed()) {
+
+
+            return true;
+        }else
+            return false;
+
+    }
+
+
+   public JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
 }
