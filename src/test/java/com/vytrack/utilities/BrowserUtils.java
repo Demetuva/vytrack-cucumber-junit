@@ -1,9 +1,11 @@
 package com.vytrack.utilities;
 
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -23,7 +25,7 @@ public class BrowserUtils {
 //   • Arg2: String expectedInUrl
 //   • Arg3: String expectedTitle
 
-    public static void switchWindowAndVerify(String expectedInUrl,String expectedTitle){
+    public static void switchWindowAndVerify(String expectedInUrl, String expectedTitle) {
 
         Set<String> allWindowHandles = Driver.getDriver().getWindowHandles();
 
@@ -32,7 +34,7 @@ public class BrowserUtils {
             Driver.getDriver().switchTo().window(eachWindow);
             //  System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
 
-            if(Driver.getDriver().getCurrentUrl().contains(expectedInUrl)){
+            if (Driver.getDriver().getCurrentUrl().contains(expectedInUrl)) {
                 break;
             }
         }
@@ -40,34 +42,34 @@ public class BrowserUtils {
 //        5. Assert:Title contains “Etsy”
         String actualTitle = Driver.getDriver().getTitle();
 
-        Assert.assertTrue("Title verification failed!",actualTitle.contains(expectedTitle));
+        Assert.assertTrue("Title verification failed!", actualTitle.contains(expectedTitle));
     }
 
-    public static void verifyTitle(WebDriver driver, String expectedTitle){
+    public static void verifyTitle(WebDriver driver, String expectedTitle) {
 
-        Assert.assertEquals(driver.getTitle(),expectedTitle);
+        Assert.assertEquals(driver.getTitle(), expectedTitle);
 
     }
 
-    public static void verifyTitle2(String expectedTitle){
+    public static void verifyTitle2(String expectedTitle) {
+        Assert.assertEquals(expectedTitle, Driver.getDriver().getTitle());
+    }
 
-        Assert.assertEquals(expectedTitle,Driver.getDriver().getTitle());}
 
+    public static void waitForInvisibilityOf(WebElement element) {
 
-
-    public static void waitForInvisibilityOf(WebElement element){
-
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
-    public static void waitForVisibilityOf(WebElement element){
+    public static void waitForVisibilityOf(WebElement element) {
 
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOf(element));
 
     }
-    public static void hoverOver(WebElement element){
+
+    public static void hoverOver(WebElement element) {
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(element).perform();
 
