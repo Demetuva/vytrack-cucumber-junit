@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = "html:target/cucumber-report.html",
         features = "src/test/resources/features",
         glue="com/vytrack/step_definitions",
-        dryRun = true,
+        dryRun = false,
         tags = "@all or @wip"
 )
 public class CukesRunner {
