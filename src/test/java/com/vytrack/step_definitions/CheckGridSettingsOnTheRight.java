@@ -28,7 +28,7 @@ public class CheckGridSettingsOnTheRight {
         BrowserUtils.hoverOver(checkGridSettingsOnTheRight.GridSettingsBtn);
     }
 
-    @And("user clicks on Grid Settings button")
+    @When("user clicks on Grid Settings button")
     public void userClicksOnGridSettingsButton() {
         BrowserUtils.waitForVisibilityOf(checkGridSettingsOnTheRight.GridSettingsMenu);
         checkGridSettingsOnTheRight.GridSettingsBtn.click();
