@@ -15,12 +15,4 @@ Background: User login successfully
     Then user clicks on Export Grid dropdown button
 
 
-     #AC8: Grid Setting button is on the right of the page
-  @Victor @Ivanna
-  Scenario: Click Export Grid dropdown
-    Given user is on the home page
-    When user hovers over on Fleet Module
-    And user clicks on Vehicles button
-    Then user clicks on Export Grid dropdown button
-
 

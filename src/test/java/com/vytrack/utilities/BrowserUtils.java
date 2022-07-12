@@ -49,6 +49,12 @@ public class BrowserUtils {
 
     }
 
+    public static void verifyTitle2(String expectedTitle){
+
+        Assert.assertEquals(expectedTitle,Driver.getDriver().getTitle());}
+
+
+
     public static void waitForInvisibilityOf(WebElement element){
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
