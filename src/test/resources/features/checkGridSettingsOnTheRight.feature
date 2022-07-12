@@ -1,4 +1,4 @@
-@vick
+@Vick
 Feature: AC8 Grid Setting button is on the right of the page
   User Story: As a user when I am on Vytrack => Fleet => Vehicles,
   I should be able to see Export Grid dropdown, Refresh, Reset and
@@ -10,7 +10,6 @@ Feature: AC8 Grid Setting button is on the right of the page
     And user clicks on Vehicles button
     Then user is on the Vehicles page
 
-  @Victor @Ivanna
   Scenario: Grid Setting button is on the right of the Vehicles page
     Given user navigate to the Grid Settings button
     When user clicks on Grid Settings button

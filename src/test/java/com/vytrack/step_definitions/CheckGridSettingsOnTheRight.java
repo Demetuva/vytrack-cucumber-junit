@@ -25,12 +25,13 @@ public class CheckGridSettingsOnTheRight {
 
     @Given("user navigate to the Grid Settings button")
     public void userNavigateToTheGridSettingsButton() {
+        BrowserUtils.waitForVisibilityOf(checkGridSettingsOnTheRight.GridSettingsBtn);
         BrowserUtils.hoverOver(checkGridSettingsOnTheRight.GridSettingsBtn);
     }
 
-    @And("user clicks on Grid Settings button")
+    @When("user clicks on Grid Settings button")
     public void userClicksOnGridSettingsButton() {
-        BrowserUtils.waitForVisibilityOf(checkGridSettingsOnTheRight.GridSettingsMenu);
+        BrowserUtils.waitForVisibilityOf(checkGridSettingsOnTheRight.GridSettingsBtn);
         checkGridSettingsOnTheRight.GridSettingsBtn.click();
     }
 
