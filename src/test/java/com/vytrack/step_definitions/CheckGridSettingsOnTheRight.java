@@ -8,6 +8,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.vytrack.utilities.BrowserUtils.verifyTitle2;
@@ -25,8 +26,10 @@ public class CheckGridSettingsOnTheRight {
 
     @Given("user navigate to the Grid Settings button")
     public void userNavigateToTheGridSettingsButton() {
-        BrowserUtils.waitForVisibilityOf(checkGridSettingsOnTheRight.GridSettingsBtn);
-        BrowserUtils.hoverOver(checkGridSettingsOnTheRight.GridSettingsBtn);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        wait.until(ExpectedConditions.visibilityOf(checkGridSettingsOnTheRight.GridSettingsBtn));
+        //BrowserUtils.waitForVisibilityOf(checkGridSettingsOnTheRight.GridSettingsBtn);
+        //BrowserUtils.hoverOver(checkGridSettingsOnTheRight.GridSettingsBtn);
     }
 
     @When("user clicks on Grid Settings button")
