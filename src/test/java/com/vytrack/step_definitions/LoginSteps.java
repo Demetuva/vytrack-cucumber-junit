@@ -6,6 +6,7 @@ import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 public class LoginSteps {
     LoginPage loginPage = new LoginPage();
@@ -15,15 +16,12 @@ public class LoginSteps {
         Driver.getDriver().get(ConfigurationReader.getProperty("vytrack"));
     }
 
-    @When("user enters valid username")
-    public void user_enters_valid_as_username() {
-        loginPage.username.sendKeys("user4");
+    @When("user enters valid {string} and valid {string}")
+    public void user_enters_valid_and_valid(String username, String password) {
+        loginPage.username.sendKeys(username+ Keys.ENTER);
+        loginPage.password.sendKeys(password);
     }
 
-    @When("user enters valid password")
-    public void user_enters_valid() {
-        loginPage.password.sendKeys("UserUser123");
-    }
 
     @When("user clicks on the login button")
     public void user_clicks_on_the_login_button() {
@@ -34,4 +32,5 @@ public class LoginSteps {
     public void user_should_be_able_to_see_in_the_title() {
         Driver.getDriver().getTitle();
     }
+
 }

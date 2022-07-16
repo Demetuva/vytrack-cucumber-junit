@@ -5,8 +5,7 @@ Feature: Login to Vytrack application
 
   Scenario Outline: Login to homepage
     Given User are on the login page
-    When user enters valid username
-    And user enters valid password
+    When user enters valid "<username>" and valid "<password>"
     And user clicks on the login button
     Then User should be able to see "Dashboard" in the title
 
