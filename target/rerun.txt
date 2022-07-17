@@ -1,0 +1,3 @@
+file:src/test/resources/features/checkGridSettingsOnTheRight.feature:13
+file:src/test/resources/features/login.feature:14
+file:src/test/resources/features/clickExportGrid.feature:11
